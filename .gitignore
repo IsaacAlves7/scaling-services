@@ -1,0 +1,8 @@
+*.
+node_modules
+docker
+config
+routes
+views
+public
+models
