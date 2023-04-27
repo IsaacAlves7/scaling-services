@@ -42,4 +42,9 @@ Por fim, vamos ver um pouco sobre o *arquivo de configuração do NGINX*, para e
 
 No arquivo `nginx.conf`, dentro server, está a parte que trata de servir os *arquivos estáticos*. Na `porta 80`, no localhost, em `/var/www/public`, ele será responsável por servir as pastas `css`, `img` e `js`. E todo resto, que não for esses três locais, ele irá jogar para o `node_upstream`.
 
-No **node_upstream**, é onde ficam as configurações para o NGINX redirecionar as conexões que ele receber para um dos três containers da nossa aplicação. O redirecionamento acontecerá de forma circular, ou seja, a **primeira conexão irá para o primeiro container**, a **segunda irá para o segundo container**, a **terceira irá para o terceiro container**, na **quarta, começa tudo de novo**, **e ela vai para o primeiro container e assim por diante**.
+No **node_upstream**, é onde ficam as configurações para o NGINX redirecionar as conexões que ele receber para um dos três containers da nossa aplicação. O redirecionamento acontecerá de forma circular (fila circular - estrutura de dados), ou seja: 
+
+1. A primeira conexão irá para o primeiro container;
+2. A segunda irá para o segundo container; 
+3. A terceira irá para o terceiro container; 
+4. Na quarta, começa tudo de novo, e ela vai para o primeiro container e assim por diante.
