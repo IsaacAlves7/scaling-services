@@ -13,3 +13,6 @@ Então, para isso foi criada uma ferramenta no Docker chamada **Docker Compose**
 
 Esse arquivo serve para dar um conjunto de passos ao Docker e com ele podemos controlar quais containers sobem primeiro, ou seja, funciona como um processo de BIOS ou um automatizador de containers. O **Docker Compose** cria uma rede padrão, também é possível criar uma nova rede usando o comando `docker network`.
 
+Essa é uma aplicação possui servidor, rotas e banco de dados. De novidade, é que agora precisamos criar o **NGINX**, que é mais um container que devemos subir.
+
+Então, ao utilizarmos a **imagem nginx**, ou criamos a nossa própria. Como vamos configurar o NGINX para algumas coisas específicas, como lidar com os **arquivos estáticos**, vamos criar a nossa própria imagem, por isso que na aplicação há o `nginx.dockerfile`:
