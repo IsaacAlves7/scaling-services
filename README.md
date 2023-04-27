@@ -155,3 +155,34 @@ Depois de buildar os serviços, eles podem ser vistos em:
 ```sh
 docker images
 ```
+
+Após isso, podemos inserir o comando:
+
+```sh
+docker-compose up # ou docker-compose up -d
+```
+
+### Listando e verificando o docker-compose
+
+```sh
+docker-compose ps
+```
+
+### Para e remove todos os containers do docker-compose
+
+```sh
+docker-compose down
+```
+
+### Verificando que os containers estão se comunicando
+
+```sh
+docker exec -it alura-books-1 ping alura-books-2
+docker exec -it alura-books-1 ping node2
+```
+
+### Reinicializando containers
+
+```sh
+docker-compose restart
+```
