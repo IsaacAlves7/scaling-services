@@ -117,3 +117,11 @@ No **node_upstream**, é onde ficam as configurações para o NGINX redirecionar
 2. A segunda irá para o segundo container; 
 3. A terceira irá para o terceiro container; 
 4. Na quarta, começa tudo de novo, e ela vai para o primeiro container e assim por diante.
+
+Agora, começamos a descrever os nossos **serviços** (services):
+
+> Um serviço é uma parte da nossa aplicação dockerizada, lembrando do diagrama acima.
+
+Temos um nó com NGINX, três nós com Node.js, e um nó com MongoDB como serviços. Logo, se queremos construir cinco containers, vamos construir cinco serviços, cada um deles com um nome específico.
+
+
