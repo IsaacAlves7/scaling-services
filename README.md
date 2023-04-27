@@ -138,6 +138,8 @@ O nome da rede será `production-network` e utilizará o driver `bridge`: Com a 
 
 Isso é para construir o **serviço do NGINX**, agora vamos construir o **serviço do MongoDB**, com o nome `mongodb`. Como ele será construído a partir da imagem `mongo`, não vamos utilizar nenhum Dockerfile, logo não utilizamos a propriedade `build`. Além disso, não podemos nos esquecer de colocá-lo na rede que criamos.
 
-Falta agora criarmos os três serviços em que ficará a nossa aplicação: `node1`, `node2` e `node3`. Para eles, será semelhante ao NGINX, com Dockerfile `alura-books.dockerfile`, contexto da rede `production-network` e porta `3000`:
+Falta agora criarmos os três serviços em que ficará a nossa aplicação: `node1`, `node2` e `node3`. Para eles, será semelhante ao NGINX, com Dockerfile `alura-books.dockerfile`, contexto da rede `production-network` e porta `3000`: Com isso, a construção dos nossos serviços está finalizada.
 
-Com isso, a construção dos nossos serviços está finalizada.
+Por último, quando subimos os containers na mão, temos uma ordem, primeiro devemos subir o `mongodb`, depois a nossa aplicação, ou seja, `node1`, `node2` e `node3` e após tudo isso subimos o `nginx`. Mas como que fazemos isso no `docker-compose.yml`? Nós podemos dizer que os serviços da nossa aplicação dependem que um serviço suba antes deles, o serviço do `mongodb`. Da mesma forma, dizemos que o serviço do `nginx` depende dos serviços `node1`, `node2` e `node3`.
+
+Com o `docker-compose.yml` pronto, podemos subir os serviços, mas antes devemos garantir que temos todas as imagens envolvidas neste arquivo na nossa máquina. Para isso, dentro da pasta do nosso projeto, executamos o seguinte comando:
