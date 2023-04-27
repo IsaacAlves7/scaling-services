@@ -123,4 +123,20 @@ Agora, começamos a descrever os nossos **serviços** (services):
 
 Temos um nó com NGINX, três nós com Node.js, e um nó com MongoDB como serviços. Logo, se queremos construir cinco containers, vamos construir cinco serviços, cada um deles com um nome específico.
 
+Então, vamos começar construindo o NGINX, que terá o nome `nginx`. Em cada serviço, devemos dizer como devemos construí-lo, como devemos fazer o seu build.
 
+O serviço será construído através de um `Dockerfile`, então devemos passá-lo onde ele está. E também devemos passar um contexto, para dizermos a partir de onde o `Dockerfile` deve ser buscado. Como ele será buscado a partir da pasta atual, vamos utilizar o ponto:
+
+Construída a imagem, devemos dar um nome para ela, por exemplo `douglasq/nginx`. E quando o Docker Compose criar um container a partir dessa imagem, vamos dizer que o seu nome será `nginx`.
+
+Sabemos também que o NGINX trabalha com duas portas, a `80` (HTTP) e a `443`(HTTPS). Como não estamos trabalhando com HTTPS, vamos utilizar somente a porta `80`, e no próprio arquivo, podemos dizer para qual porta da nossa máquina queremos mapear a porta `80` do container. Vamos mapear para a porta de mesmo número da nossa máquina.
+
+No YAML, toda vez que colocamos um traço, significa que a propriedade pode receber mais de um item. Agora, para os containers conseguirem se comunicar, eles devem estar na mesma rede, então vamos configurar isso também. Primeiramente, devemos criar a rede, que não é um serviço, então vamos escrever do começo do arquivo, sem as tabulações:
+
+O nome da rede será `production-network` e utilizará o driver `bridge`: Com a rede criada, vamos utilizá-la no serviço.
+
+Isso é para construir o **serviço do NGINX**, agora vamos construir o **serviço do MongoDB**, com o nome `mongodb`. Como ele será construído a partir da imagem `mongo`, não vamos utilizar nenhum Dockerfile, logo não utilizamos a propriedade `build`. Além disso, não podemos nos esquecer de colocá-lo na rede que criamos.
+
+Falta agora criarmos os três serviços em que ficará a nossa aplicação: `node1`, `node2` e `node3`. Para eles, será semelhante ao NGINX, com Dockerfile `alura-books.dockerfile`, contexto da rede `production-network` e porta `3000`:
+
+Com isso, a construção dos nossos serviços está finalizada.
