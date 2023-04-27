@@ -142,4 +142,10 @@ Falta agora criarmos os três serviços em que ficará a nossa aplicação: `nod
 
 Por último, quando subimos os containers na mão, temos uma ordem, primeiro devemos subir o `mongodb`, depois a nossa aplicação, ou seja, `node1`, `node2` e `node3` e após tudo isso subimos o `nginx`. Mas como que fazemos isso no `docker-compose.yml`? Nós podemos dizer que os serviços da nossa aplicação dependem que um serviço suba antes deles, o serviço do `mongodb`. Da mesma forma, dizemos que o serviço do `nginx` depende dos serviços `node1`, `node2` e `node3`.
 
+## Subindo os serviços
 Com o `docker-compose.yml` pronto, podemos subir os serviços, mas antes devemos garantir que temos todas as imagens envolvidas neste arquivo na nossa máquina. Para isso, dentro da pasta do nosso projeto, executamos o seguinte comando:
+
+### Inicia o Docker Compose
+```sh
+docker-compose build
+```
