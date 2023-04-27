@@ -5,7 +5,7 @@
 </a></div>
 
 # Scaling and Load balancing services with Docker
-> Essa aplicaçãp possui uma estrutura monolítica atuando com a arquitetura MVC (Model View Controller) e ODM (Object Document Model).
+> Essa aplicação possui uma estrutura monolítica atuando com a arquitetura MVC (Model View Controller) e ODM (Object Document Model).
 
 Na vida real, sabemos que a aplicação é maior que somente dois containers, geralmente temos dois, três ou mais containers para segurar o tráfego da aplicação, distribuindo a carga. Além disso, temos que colocar todos esses containers para se comunicar com o banco de dados em um outro container, mas quanto maior a aplicação, devemos ter mais de um container para o banco também.
 
