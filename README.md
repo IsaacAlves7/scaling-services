@@ -38,6 +38,8 @@ Nesse arquivo, nós utilizamos a última versão disponível da imagem do nginx 
 
 Por fim, vamos ver um pouco sobre o *arquivo de configuração do NGINX*, para entendermos um pouco como o **load balancer** está funcionando.
 
+[![NGINX](https://img.shields.io/badge/-nginx.conf-000000?style=social&logo=Nginx&logoColor=#009639)](#)
+
 No arquivo `nginx.conf`, dentro server, está a parte que trata de servir os *arquivos estáticos*. Na `porta 80`, no localhost, em `/var/www/public`, ele será responsável por servir as pastas `css`, `img` e `js`. E todo resto, que não for esses três locais, ele irá jogar para o `node_upstream`.
 
 No **node_upstream**, é onde ficam as configurações para o NGINX redirecionar as conexões que ele receber para um dos três containers da nossa aplicação. O redirecionamento acontecerá de forma circular, ou seja, a **primeira conexão irá para o primeiro container**, a **segunda irá para o segundo container**, a **terceira irá para o terceiro container**, na **quarta, começa tudo de novo**, **e ela vai para o primeiro container e assim por diante**.
