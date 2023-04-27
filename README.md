@@ -145,7 +145,13 @@ Por último, quando subimos os containers na mão, temos uma ordem, primeiro dev
 ## Subindo os serviços
 Com o `docker-compose.yml` pronto, podemos subir os serviços, mas antes devemos garantir que temos todas as imagens envolvidas neste arquivo na nossa máquina. Para isso, dentro da pasta do nosso projeto, executamos o seguinte comando:
 
-### Inicia o Docker Compose
+### Inicio/Build do Docker Compose
 ```sh
 docker-compose build
+```
+
+Depois de buildar os serviços, eles podem ser vistos em:
+
+```sh
+docker images
 ```
