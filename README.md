@@ -33,6 +33,7 @@ services:
 
     mongodb:
         image: mongo
+        container_name: mongodb
         networks: 
             - production-network
 
