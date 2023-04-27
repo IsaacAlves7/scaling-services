@@ -6,3 +6,9 @@ Na vida real, sabemos que a aplicação é maior que somente dois containers, ge
 E claro, se temos três aplicações rodando, não podemos ter três endereços diferentes, então nesses casos utilizamos um Load Balancer em um outro container, para fazer a distribuição de carga quando tivermos muitos acessos. Ele recebe as requisições e distribui para uma das aplicações, e ele também é muito utilizado para servir os arquivos estáticos, como imagens, arquivos CSS e JavaScript.
 
 Assim, a nossa aplicação controla somente a lógica, as regras de negócio, com os arquivos estáticos ficando a cargo do Load Balancer.
+
+[![dockerfile](https://img.shields.io/badge/-docker--compose.yaml-pink?style=social&logo=docker&logoColor=magenta)](#)
+
+Então, para isso foi criada uma ferramenta no Docker chamada **Docker Compose**, que ele executa e auxilia na build ou criação de vários (múltiplos) containers simultaneamente. Ele funciona seguindo um arquivo de texto, chamado `docker-compose.yaml`.
+
+Esse arquivo serve para dar um conjunto de passos ao Docker e com ele podemos controlar quais containers sobem primeiro, ou seja, funciona como um processo de BIOS ou um automatizador de containers.
