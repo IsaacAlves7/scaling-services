@@ -4,7 +4,7 @@
 
 </a></div>
 
-# [Docker] Scaling and Load balancing services
+# [Docker] Scaling services
 > ⚖️📦➕ **Arquitetura da aplicação**: Essa é uma aplicação criada para o modelo cliente-servidor usando o Marko para front-end e Node.js para o back-end, e possui uma estrutura monolítica atuando com a arquitetura MVC (Model View Controller) e ODM (Object Document Model) com Mongoose e MongoDB como banco de dados NoSQL.
 
 Na vida real, sabemos que a aplicação é maior que somente dois containers, geralmente temos dois, três ou mais containers para segurar o tráfego da aplicação, distribuindo a carga. Além disso, temos que colocar todos esses containers para se comunicar com o banco de dados em um outro container, mas quanto maior a aplicação, devemos ter mais de um container para o banco também.
